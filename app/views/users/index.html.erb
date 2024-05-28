@@ -1,0 +1,14 @@
+<%@users.each do |user| %>
+    <ul>
+        <li>
+            <%#= image_tag user.file.url %> <br> <br> <br>
+            <!-- <p>ActiveStorage File</p> -->
+           <% if user.file.attached? %>
+      <%= image_tag url_for(user.file) %>
+    <%# else %>
+      <!-- <p>No image available</p> -->
+    <%end %>
+        </li>
+    </ul>
+    <br> <br>
+<%end%>
